@@ -26,11 +26,32 @@
 // }
 
 
-//No.3
+// //No.3
+// function Main(input) {
+//     const count = input.trim().split("").filter(ch => ch === "1");
+//     const judge = count.length;
+//     console.log(judge); 
+// }
+
+
+// //No.4
 function Main(input) {
-    const count = input.trim().split(" ").filter(ch => ch ==="1");
-    const judge = count.length;
-    console.log(judge); 
+  const lines = input.trim().split(/\s+/);
+  const N = parseInt(lines[0], 10);
+  let A = lines.slice(1).map(x => parseInt(x));
+
+  let count = 0;
+  while(true) {
+    const allEven = A.every(num => num % 2 === 0);
+
+    if(allEven) {
+      count++;
+      A = A.map( num => num / 2);
+    } else {
+      break;
+    }
+  }
+  console.log(count);
 }
 
 Main(require("fs").readFileSync(0, "utf8"));

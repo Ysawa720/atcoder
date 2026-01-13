@@ -12,19 +12,27 @@
 // }
 
 
-//No.2
+// //No.2
+// function Main(input) {
+//     const temp = input.trim().split(" ");
+//     const a = parseInt(temp[0], 10);
+//     const b = parseInt(temp[1], 10);
+//     const product = a * b; 
+//     if (product % 2 === 0) {
+//         console.log("Even");
+//       } else {
+//         console.log("Odd");
+//       }
+// }
+
+
+//No.3
 function Main(input) {
-    const temp = input.trim().split(" ");
-    const a = parseInt(temp[0], 10);
-    const b = parseInt(temp[1], 10);
-    const product = a * b; 
-    if (product % 2 === 0) {
-        console.log("Even");
-      } else {
-        console.log("Odd");
-      }
+    const count = input.trim().split(" ").filter(ch => ch ==="1");
+    const judge = count.length;
+    console.log(judge); 
 }
-    
+
 Main(require("fs").readFileSync(0, "utf8"));
 
 
